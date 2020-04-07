@@ -10,6 +10,10 @@
             color: maroon;
         }
 
+        h3 {
+            color: maroon;
+        }
+
         body {
             background-color: white;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -28,6 +32,24 @@
             position: relative;
             left: -10%;
         }
+
+        div.pushRight {
+            position: relative;
+            top: -615px;
+            left: 900px;
+        }
+
+        div.center {
+            margin: auto;
+            width: 80%;
+            padding: 10px;
+        }
+
+        div.left {
+            margin: auto auto auto -50px;
+            width: 80%;
+            padding: 0px;
+        }
     </style>
 </head>
 <body>
@@ -39,7 +61,7 @@
 
     <div class="pushLeft">
         <link rel="stylesheet" type="text/css" href="~/css/poster.css" />
-        
+
         <h1>MSSA LAC27 Digital Job Application Poster</h1>
         <table>
             <tbody>
@@ -397,6 +419,23 @@
                 </tr> <!-- 14 Tyler -->
             </tbody>
         </table>
+    </div>
+    <div class="pushRight">
+        <h3>Add Sticker</h3>
+        <div class="form-horizontal">
+            <div class="form-group">
+                <label class="col-md-2 control-label">Select Student</label>
+                <div class="col-md-3">
+                    @Html.DropDownList("StudentNames", new SelectList(ViewBag.StudentNames), new { @class = "form-control" })
+                </div>
+            </div>
+        </div>
+        <p>
+            @for (int i = 0; i < 14; i++)
+            {
+                @await Component.InvokeAsync("StudentSticker", i)
+            }
+        </p>
     </div>
 </body>
 </html>

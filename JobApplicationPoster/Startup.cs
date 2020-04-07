@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using JobApplicationPoster.Services;
 
 namespace JobApplicationPoster
 {
@@ -24,6 +25,8 @@ namespace JobApplicationPoster
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            services.AddMvc();
+            services.AddSingleton<IStudentProvider, StudentProvider>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
