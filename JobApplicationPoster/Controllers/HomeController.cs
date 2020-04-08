@@ -29,22 +29,24 @@ namespace JobApplicationPoster.Controllers
         public IActionResult Index()
         {
             StudentNamesModel sn = new StudentNamesModel();
-            sn.studentNames = new List<string>() { "Benjamin", "Daveena", "Demitrius", "Elias", "Emily", "Franck", "Hyoil", "Kiran", "Paul", "Raphael", "Raven", "Taylor", "Thomas" };
+            sn.studentNames = new List<string>() { "Benjamin", "Daveena", "Demitrius", "Elias", "Emily", "Franck", "Hyoil", "Kiran", "Paul", "Raphael", "Raven", "Taylor", "Thomas" , "Tyler" };
             ViewBag.StudentNames = sn.studentNames;
             ViewBag.Students = _studentProvider.StudentList;
             ViewBag.SelectedStudent = sn.SelectedName;
+            string selectedStudent = Request.Form["StudentNamesList"].ToString();
+            ViewBag.SelectedStudent = selectedStudent;
             return View(sn);
         }
 
-        //// Trying to save the selected student from the dropdown
-        //[HttpPost]
-        //public IActionResult Index(StudentNamesModel sn)
-        //{
-        //    ViewBag.Hello = "Hello World!";
-        //    string selectedStudent = Request.Form["StudentNamesList"].ToString();
-        //    ViewBag.SelectedStudent = selectedStudent;
-        //    return View(sn);
-        //}
+        // Trying to save the selected student from the dropdown
+        [HttpPost]
+        public IActionResult Index(StudentNamesModel sn)
+        {
+            ViewBag.Hello = "Hello World!";
+            string selectedStudent = Request.Form["StudentNamesList"].ToString();
+            ViewBag.SelectedStudent = selectedStudent;
+            return View(sn);
+        }
 
         public IActionResult Privacy()
         {
