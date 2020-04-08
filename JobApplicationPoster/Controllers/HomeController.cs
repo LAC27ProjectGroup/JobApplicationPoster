@@ -14,7 +14,7 @@ namespace JobApplicationPoster.Controllers
     public class HomeController : Controller
     {
         //private readonly ILogger<HomeController> _logger;
-        IStudentProvider _studentProvider;
+        private readonly IStudentProvider _studentProvider;
 
         //public HomeController(ILogger<HomeController> logger)
         //{
@@ -28,24 +28,34 @@ namespace JobApplicationPoster.Controllers
 
         public IActionResult Index()
         {
-            StudentNamesModel sn = new StudentNamesModel();
-            sn.studentNames = new List<string>() { "Benjamin", "Daveena", "Demitrius", "Elias", "Emily", "Franck", "Hyoil", "Kiran", "Paul", "Raphael", "Raven", "Taylor", "Thomas" , "Tyler" };
+            StudentNames sn = new StudentNames
+            {
+                studentNames = new List<string>() { "Benjamin", "Daveena", "Demitrius", "Elias", "Emily", "Franck", "Hyoil", "Kiran", "Paul", "Raphael", "Raven", "Taylor", "Thomas", "Tyler" }
+            };
             ViewBag.StudentNames = sn.studentNames;
             ViewBag.Students = _studentProvider.StudentList;
-            ViewBag.SelectedStudent = sn.SelectedName;
-            string selectedStudent = Request.Form["StudentNamesList"].ToString();
-            ViewBag.SelectedStudent = selectedStudent;
+            //ViewBag.SelectedStudent = sn.SelectedName;
+            //string selectedStudent = Request.Form["StudentNamesList"].ToString();
+            //ViewBag.SelectedStudent = selectedStudent;
             return View(sn);
         }
 
         // Trying to save the selected student from the dropdown
-        [HttpPost]
-        public IActionResult Index(StudentNamesModel sn)
+        //[HttpPost]
+        //public IActionResult Index(StudentNames sn)
+        //{
+        //    ViewBag.Hello = "Hello World!";
+        //    string selectedStudent = Request.Form["StudentNamesList"].ToString();
+        //    ViewBag.SelectedStudent = selectedStudent;
+        //    return View(sn);
+        //}
+
+        public IActionResult SelectStudent(StudentNames sn)
         {
-            ViewBag.Hello = "Hello World!";
-            string selectedStudent = Request.Form["StudentNamesList"].ToString();
-            ViewBag.SelectedStudent = selectedStudent;
-            return View(sn);
+            ViewBag.SelectedStudent = sn.SelectedName;
+            var position = sn.studentNames.IndexOf(sn.SelectedName); // NullReferenceException...
+            ViewBag.StudentPosition = position;
+            return RedirectToAction("Index");
         }
 
         public IActionResult Privacy()

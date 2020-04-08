@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace JobApplicationPoster.Models
 {
-    public class StudentNamesModel
+    public class StudentNames
     {
         public List<string> studentNames;
         public string SelectedName { get; set; }
