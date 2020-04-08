@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using JobApplicationPoster.Models;
 using JobApplicationPoster.Services;
+using Microsoft.AspNetCore.Http;
 
 namespace JobApplicationPoster.Controllers
 {
@@ -27,11 +28,23 @@ namespace JobApplicationPoster.Controllers
 
         public IActionResult Index()
         {
-            List<string> studentNames = new List<string>() { "Benjamin", "Daveena", "Demitrius", "Elias", "Emily", "Franck", "Hyoil", "Kiran", "Paul", "Raphael", "Raven", "Taylor", "Thomas" };
-            ViewBag.StudentNames = studentNames;
+            StudentNamesModel sn = new StudentNamesModel();
+            sn.studentNames = new List<string>() { "Benjamin", "Daveena", "Demitrius", "Elias", "Emily", "Franck", "Hyoil", "Kiran", "Paul", "Raphael", "Raven", "Taylor", "Thomas" };
+            ViewBag.StudentNames = sn.studentNames;
             ViewBag.Students = _studentProvider.StudentList;
-            return View();
+            ViewBag.SelectedStudent = sn.SelectedName;
+            return View(sn);
         }
+
+        //// Trying to save the selected student from the dropdown
+        //[HttpPost]
+        //public IActionResult Index(StudentNamesModel sn)
+        //{
+        //    ViewBag.Hello = "Hello World!";
+        //    string selectedStudent = Request.Form["StudentNamesList"].ToString();
+        //    ViewBag.SelectedStudent = selectedStudent;
+        //    return View(sn);
+        //}
 
         public IActionResult Privacy()
         {

@@ -16,21 +16,23 @@ namespace JobApplicationPoster.Services
 
         private List<Student> StudentInitializer() 
         {
-            List<Student> studentList = new List<Student>();
-            studentList.Add(new Student("Benjamin"));
-            studentList.Add(new Student("Daveena"));
-            studentList.Add(new Student("Demitrius"));
-            studentList.Add(new Student("Elias"));
-            studentList.Add(new Student("Emily"));
-            studentList.Add(new Student("Franck"));
-            studentList.Add(new Student("Hyoil"));
-            studentList.Add(new Student("Kiran"));
-            studentList.Add(new Student("Paul"));
-            studentList.Add(new Student("Raphael"));
-            studentList.Add(new Student("Raven"));
-            studentList.Add(new Student("Taylor"));
-            studentList.Add(new Student("Thomas"));
-            studentList.Add(new Student("Tyler"));
+            List<Student> studentList = new List<Student>
+            {
+                new Student("Benjamin"),
+                new Student("Daveena"),
+                new Student("Demitrius"),
+                new Student("Elias"),
+                new Student("Emily"),
+                new Student("Franck"),
+                new Student("Hyoil"),
+                new Student("Kiran"),
+                new Student("Paul"),
+                new Student("Raphael"),
+                new Student("Raven"),
+                new Student("Taylor"),
+                new Student("Thomas"),
+                new Student("Tyler")
+            };
 
             return studentList;
         }

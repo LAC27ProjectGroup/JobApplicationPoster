@@ -7,8 +7,8 @@ namespace JobApplicationPoster.Services
 {
     public class Student
     {
-        public string FirstName { get; private set; }
-        public int StickerCount { get; private set; }
+        public string FirstName { get; set; }
+        public int StickerCount { get; set; }
 
         public Student(string firstName)
         {

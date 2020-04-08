@@ -1,4 +1,6 @@
-﻿@{
+﻿@model JobApplicationPoster.Models.StudentNamesModel
+
+@{
     ViewData["Title"] = "Job Application Poster";
 }
 
@@ -423,13 +425,30 @@
     <div class="pushRight">
         <h3>Add Sticker</h3>
         <div class="form-horizontal">
-            <div class="form-group">
-                <label class="col-md-2 control-label">Select Student</label>
+            <div class="form-group" role="form">
+                <label class="col-md-2 control-label">Who Are You?</label>
                 <div class="col-md-3">
-                    @Html.DropDownList("StudentNames", new SelectList(ViewBag.StudentNames), new { @class = "form-control" })
+                    @*@Html.DropDownList("StudentNamesList", new SelectList(ViewBag.StudentNames), "Select a Student", new { @class = "form-control" })*@
+                    @Html.DropDownListFor(m => m.SelectedName, new SelectList(ViewBag.StudentNames), "Select a Student", new { @class = "form-control" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <input id="Submit1" type="submit" value="That's me!" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                        @if (ViewBag.SelectedStudent != null)
+                        {
+                            <text>Selected Student: </text> @ViewBag.SelectedStudent;
+                        }
+                    </div>
                 </div>
             </div>
         </div>
+        <p><text>Please work...</text>@ViewBag.SelectedStudent</p>
         <p>
             @for (int i = 0; i < 14; i++)
             {
