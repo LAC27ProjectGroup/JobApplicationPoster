@@ -7,4 +7,4 @@ Group Project with:
  - Franck Behinan https://github.com/FranckBehinan
  - Daveena Cooper https://github.com/dabina2018
  - Elias Hong https://github.com/eliash0913
- - Thomas Stein
+ - Thomas Stein https://github.com/thomascstein
