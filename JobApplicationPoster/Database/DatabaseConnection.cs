@@ -16,6 +16,15 @@ namespace JobApplicationPoster
         public string TableName { get; set; }
 
         /**
+         * Set password and table name
+         */
+        public DatabaseConnection()
+        {
+            _Password = "MSSA@&poster";
+            TableName = "JobData";
+        }
+
+        /**
          * Open a sql connection to execute commands.
          */
         public void OpenConnection(LoginType type, string username = null)
@@ -44,18 +53,27 @@ namespace JobApplicationPoster
         /**
          * Add New entry to table in DB. columnAndValues dictionary keys are column names and the values are values in the table.
          */
-        public void CreateNewEntry(Dictionary<string, string> columnAndValues)
+        //public void CreateNewEntry(Dictionary<string, string> columnAndValues)
+        //{
+        //    string columms = String.Join(",", columnAndValues.Keys.ToArray());
+        //    string values = String.Join("' ,'", columnAndValues.Values.ToArray());
+        //    values = "'" + values + "'";
+        //    string queryString = $@"INSERT INTO {TableName} ({columms}) VALUES ({values})";
+        //    SqlCommand command = new SqlCommand(queryString, sqlconn);
+        //    command.ExecuteNonQuery();
+        //}
+
+        public void CreateNewEntry(string name, string companyName, string jobTitle, string location, string sticker)
         {
-            string columms = String.Join(",", columnAndValues.Keys.ToArray());
-            string values = String.Join("' ,'", columnAndValues.Values.ToArray());
-            values = "'" + values + "'";
+            string columms = "Name,CompanyName,JobTitle,Location,Sticker";
+            string values = $"'{name}', '{companyName}', '{jobTitle}', '{location}', '{sticker}'";
             string queryString = $@"INSERT INTO {TableName} ({columms}) VALUES ({values})";
             SqlCommand command = new SqlCommand(queryString, sqlconn);
             command.ExecuteNonQuery();
         }
 
         /**
-         * Upadte jobID to table in DB. columnAndValues dictionary keys are column names and the values are values in the table.
+         * Update jobID to table in DB. columnAndValues dictionary keys are column names and the values are values in the table.
          */
         public void UpdateEntry(int jobID, Dictionary<string, string> columnAndValues)
         {
@@ -86,7 +104,7 @@ namespace JobApplicationPoster
          */
         public void Test()
         {
-            TableName = "JobData";
+            //TableName = "JobData";
             Dictionary<string, string> test = new Dictionary<string, string>();
             test.Add("Name", "Michael Jackson");
             test.Add("CompanyName", "Microsoft");
@@ -109,12 +127,14 @@ namespace JobApplicationPoster
             test3.Add("Sticker", "yelloworange.png");
 
             //OpenConnection(LoginType.ActiveDirectory, "eliash0913@gmail.com");
-            _Password = "MSSA@&poster";
+            //_Password = "MSSA@&poster";
             OpenConnection(LoginType.UsernameAndPassword);
-            CreateNewEntry(test);
-            CreateNewEntry(test2);
-            UpdateEntry(9, test3);
-            DeleteEntry(10);
+            //CreateNewEntry(test);
+            //CreateNewEntry(test2);
+            //UpdateEntry(2, test3);
+            //DeleteEntry(1);
+            //DeleteEntry(2);
+            CreateNewEntry("Daveena", "Microsoft", "Software Engineer", "Dallas", "green.png");
             CloseConnection();
         }
 
