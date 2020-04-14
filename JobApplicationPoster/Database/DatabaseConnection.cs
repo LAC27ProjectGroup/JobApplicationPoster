@@ -92,18 +92,21 @@ namespace JobApplicationPoster
             test.Add("CompanyName", "Microsoft");
             test.Add("JobTitle", "Software Engineer");
             test.Add("Location", "Redmond");
+            test.Add("Sticker", "27.png");
 
             Dictionary<string, string> test2 = new Dictionary<string, string>();
             test2.Add("Name", "John Doe");
             test2.Add("CompanyName", "Redhat");
             test2.Add("JobTitle", "Architect");
             test2.Add("Location", "LA");
+            test2.Add("Sticker", "forhire.png");
 
             Dictionary<string, string> test3 = new Dictionary<string, string>();
             test3.Add("Name", "Robert Kim");
             test3.Add("CompanyName", "AMD");
             test3.Add("JobTitle", "System Engineer");
             test3.Add("Location", "New York");
+            test3.Add("Sticker", "yelloworange.png");
 
             //OpenConnection(LoginType.ActiveDirectory, "eliash0913@gmail.com");
             _Password = "MSSA@&poster";

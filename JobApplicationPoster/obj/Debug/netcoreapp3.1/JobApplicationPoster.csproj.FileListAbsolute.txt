@@ -263,3 +263,9 @@ C:\Users\elias\OneDrive\MSSA\JobApplicationPoster\JobApplicationPoster\bin\Debug
 C:\Users\elias\OneDrive\MSSA\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\elias\OneDrive\MSSA\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.csproj.CoreCompileInputs.cache
 C:\Users\elias\OneDrive\MSSA\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
