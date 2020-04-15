@@ -142,7 +142,14 @@ namespace JobApplicationPoster
             //UpdateEntry(2, test3);
             //DeleteEntry(1);
             //DeleteEntry(2);
-            //CreateNewEntry("Daveena", "Microsoft", "Software Engineer", "Dallas", "green.png");
+            //CreateNewEntry("Emily", "Microsoft", "Software Engineer", "Reston, VA", "green.png");
+            //CreateNewEntry("Emily", "Lockheed Martin", "Software Engineer", "Reston,VA", "blue.png");
+            //CreateNewEntry("Emily", "Oracle", "Software Engineer", "Reston, VA", "iapplied.png");
+            //CreateNewEntry("Emily", "Amazon", "Software Developer Engineer", "DC", "forhire.png");
+            //CreateNewEntry("Emily", "Apex Systems", "Software Engineer", "Springfield, VA", "orange.png");
+            //CreateNewEntry("Emily", "Booz Allen Hamilton", "Software Engineer", "Reston, VA", "itsemipro.png");
+            //CreateNewEntry("Emily", "Northrup Grumman", "Software Engineer", "LA, CA", "greenyellow.png");
+            //CreateNewEntry("Emily", "Alta IT Services", "Software Engineer", "Arlington, VA", "27.png");
             //UpdateEntry(3, "Daveena", "Oracle", "Software Developer", "Dallas", "blue.png");
             //DeleteEntry(3);
             //DeleteEntry(4);
