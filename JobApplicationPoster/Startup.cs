@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using JobApplicationPoster.Services;
+using JobApplicationPoster.Models;
 
 namespace JobApplicationPoster
 {

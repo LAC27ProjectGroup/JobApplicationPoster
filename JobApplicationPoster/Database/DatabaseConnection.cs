@@ -75,15 +75,23 @@ namespace JobApplicationPoster
         /**
          * Update jobID to table in DB. columnAndValues dictionary keys are column names and the values are values in the table.
          */
-        public void UpdateEntry(int jobID, Dictionary<string, string> columnAndValues)
+        //public void UpdateEntry(int jobID, Dictionary<string, string> columnAndValues)
+        //{
+        //    string[] elements = new string[columnAndValues.Count];
+        //    int index = 0;
+        //    foreach (var key in columnAndValues.Keys)
+        //    {
+        //        elements[index++] = key + " = '" + columnAndValues[key] + "'";
+        //    }
+        //    string setStatement = String.Join(',', elements);
+        //    string queryString = $@"UPDATE {TableName} SET {setStatement} WHERE jobID = {jobID}";
+        //    SqlCommand command = new SqlCommand(queryString, sqlconn);
+        //    command.ExecuteNonQuery();
+        //}
+
+        public void UpdateEntry(int jobID, string name, string companyName, string jobTitle, string location, string sticker)
         {
-            string[] elements = new string[columnAndValues.Count];
-            int index = 0;
-            foreach (var key in columnAndValues.Keys)
-            {
-                elements[index++] = key + " = '" + columnAndValues[key] + "'";
-            }
-            string setStatement = String.Join(',', elements);
+            string setStatement = $"Name = '{name}',CompanyName = '{companyName}',JobTitle = '{jobTitle}',Location = '{location}',Sticker = '{sticker}'";
             string queryString = $@"UPDATE {TableName} SET {setStatement} WHERE jobID = {jobID}";
             SqlCommand command = new SqlCommand(queryString, sqlconn);
             command.ExecuteNonQuery();
@@ -105,26 +113,26 @@ namespace JobApplicationPoster
         public void Test()
         {
             //TableName = "JobData";
-            Dictionary<string, string> test = new Dictionary<string, string>();
-            test.Add("Name", "Michael Jackson");
-            test.Add("CompanyName", "Microsoft");
-            test.Add("JobTitle", "Software Engineer");
-            test.Add("Location", "Redmond");
-            test.Add("Sticker", "27.png");
+            //Dictionary<string, string> test = new Dictionary<string, string>();
+            //test.Add("Name", "Michael Jackson");
+            //test.Add("CompanyName", "Microsoft");
+            //test.Add("JobTitle", "Software Engineer");
+            //test.Add("Location", "Redmond");
+            //test.Add("Sticker", "27.png");
 
-            Dictionary<string, string> test2 = new Dictionary<string, string>();
-            test2.Add("Name", "John Doe");
-            test2.Add("CompanyName", "Redhat");
-            test2.Add("JobTitle", "Architect");
-            test2.Add("Location", "LA");
-            test2.Add("Sticker", "forhire.png");
+            //Dictionary<string, string> test2 = new Dictionary<string, string>();
+            //test2.Add("Name", "John Doe");
+            //test2.Add("CompanyName", "Redhat");
+            //test2.Add("JobTitle", "Architect");
+            //test2.Add("Location", "LA");
+            //test2.Add("Sticker", "forhire.png");
 
-            Dictionary<string, string> test3 = new Dictionary<string, string>();
-            test3.Add("Name", "Robert Kim");
-            test3.Add("CompanyName", "AMD");
-            test3.Add("JobTitle", "System Engineer");
-            test3.Add("Location", "New York");
-            test3.Add("Sticker", "yelloworange.png");
+            //Dictionary<string, string> test3 = new Dictionary<string, string>();
+            //test3.Add("Name", "Robert Kim");
+            //test3.Add("CompanyName", "AMD");
+            //test3.Add("JobTitle", "System Engineer");
+            //test3.Add("Location", "New York");
+            //test3.Add("Sticker", "yelloworange.png");
 
             //OpenConnection(LoginType.ActiveDirectory, "eliash0913@gmail.com");
             //_Password = "MSSA@&poster";
@@ -134,7 +142,11 @@ namespace JobApplicationPoster
             //UpdateEntry(2, test3);
             //DeleteEntry(1);
             //DeleteEntry(2);
-            CreateNewEntry("Daveena", "Microsoft", "Software Engineer", "Dallas", "green.png");
+            //CreateNewEntry("Daveena", "Microsoft", "Software Engineer", "Dallas", "green.png");
+            //UpdateEntry(3, "Daveena", "Oracle", "Software Developer", "Dallas", "blue.png");
+            //DeleteEntry(3);
+            //DeleteEntry(4);
+            //DeleteEntry(5);
             CloseConnection();
         }
 

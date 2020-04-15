@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using JobApplicationPoster.Models;
-using JobApplicationPoster.Services;
+using JobApplicationPoster.Models;
 using Microsoft.AspNetCore.Http;
 
 namespace JobApplicationPoster.Controllers

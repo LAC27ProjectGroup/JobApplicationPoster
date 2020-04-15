@@ -1,4 +1,4 @@
-﻿using JobApplicationPoster.Services;
+﻿using JobApplicationPoster.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;

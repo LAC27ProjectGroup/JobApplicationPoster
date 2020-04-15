@@ -14,7 +14,8 @@ namespace JobApplicationPoster.Database
         public void OpenConnection(LoginType type, string username = null);
         //public void CreateNewEntry(Dictionary<string, string> columnAndValues);
         public void CreateNewEntry(string name, string companyName, string jobTitle, string location, string sticker);
-        public void UpdateEntry(int jobID, Dictionary<string, string> columnAndValues);
+        //public void UpdateEntry(int jobID, Dictionary<string, string> columnAndValues);
+        public void UpdateEntry(int jobID, string name, string companyName, string jobTitle, string location, string sticker);
         public void DeleteEntry(int jobID);
         public void CloseConnection();
 
