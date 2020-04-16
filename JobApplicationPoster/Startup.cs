@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using JobApplicationPoster.Models;
+using JobApplicationPoster.Database;
 
 namespace JobApplicationPoster
 {
@@ -24,6 +25,10 @@ namespace JobApplicationPoster
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            string connectionString = Configuration.GetConnectionString("EmilyAzure");
+            //services.AddDbContext<JobContext>(option => option.Use
+            //UseSqlServer(connectionString));
+
             services.AddControllersWithViews();
             services.AddMvc();
             services.AddSingleton<IStudentProvider, StudentProvider>();
@@ -68,5 +73,7 @@ namespace JobApplicationPoster
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }
+
+        
     }
 }

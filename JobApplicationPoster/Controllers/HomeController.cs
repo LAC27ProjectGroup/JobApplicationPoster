@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using JobApplicationPoster.Models;
-using JobApplicationPoster.Models;
 using Microsoft.AspNetCore.Http;
 
 namespace JobApplicationPoster.Controllers
@@ -32,6 +31,14 @@ namespace JobApplicationPoster.Controllers
             {
                 studentNames = new List<string>() { "Benjamin", "Daveena", "Demitrius", "Elias", "Emily", "Franck", "Hyoil", "Kiran", "Paul", "Raphael", "Raven", "Taylor", "Thomas", "Tyler" }
             };
+
+            //TEST: Elias
+            /*Dictionary<string, List<string>> stickers = new Dictionary<string, List<string>>();
+            stickers.Add("Elias", new List<string> { "stickers/red.png", "stickers/orange.png" });
+            stickers.Add("Emily", new List<string> { "stickers/green.png", "stickers/purple.png" });
+            stickers.Add("Thomas", new List<string> { "stickers/blue.png", "stickers/black.png" });
+            ViewBag.Stickers = stickers;*/
+
             ViewBag.StudentNames = sn.studentNames;
             ViewBag.Students = _studentProvider.StudentList;
             //ViewBag.SelectedStudent = sn.SelectedName;
