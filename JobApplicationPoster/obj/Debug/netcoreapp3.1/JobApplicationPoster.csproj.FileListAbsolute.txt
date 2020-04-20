@@ -143,8 +143,6 @@ C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplication
 C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.csproj.CoreCompileInputs.cache
-C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Components\StudentSticker\StickerLayout.cshtml.g.cs
 C:\Users\elias\OneDrive\MSSA\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\elias\OneDrive\MSSA\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\appsettings.json
@@ -285,3 +283,21 @@ C:\Users\elias\OneDrive\MSSA\JobApplicationPoster\JobApplicationPoster\bin\Debug
 C:\Users\elias\OneDrive\MSSA\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Users\elias\OneDrive\MSSA\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.csproj.CoreCompileInputs.cache
 C:\Users\elias\OneDrive\MSSA\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\config.json
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.csproj.CoreCompileInputs.cache
+C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.MvcApplicationPartsAssemblyInfo.cache
