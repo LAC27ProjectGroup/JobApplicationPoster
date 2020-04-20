@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <None Include="wwwroot\favicon.ico" />
-<<<<<<< Updated upstream
     <None Include="wwwroot\stickers\27.png" />
     <None Include="wwwroot\stickers\black.png" />
     <None Include="wwwroot\stickers\blue.png" />
@@ -33,10 +32,6 @@
     <None Include="wwwroot\stickers\purple.png" />
     <None Include="wwwroot\stickers\red.png" />
     <None Include="wwwroot\stickers\redyellow.png" />
-=======
-    <None Include="wwwroot\stickers\Circle I Applied.png" />
-    <None Include="wwwroot\stickers\Circle Need A Job.png" />
->>>>>>> Stashed changes
     <None Include="wwwroot\stickers\Star F-Blue O-Yellow.png" />
     <None Include="wwwroot\stickers\Star F-Green O-Yellow.png" />
     <None Include="wwwroot\stickers\Star F-Orange O-Yellow.png" />
@@ -46,22 +41,20 @@
     <None Include="wwwroot\stickers\Star F-Yellow O-Orange.png" />
     <None Include="wwwroot\stickers\Star F-Yellow O-Red.png" />
     <None Include="wwwroot\stickers\Star LAC 27 Military.png" />
-<<<<<<< Updated upstream
     <None Include="wwwroot\stickers\yellow.png" />
     <None Include="wwwroot\stickers\yellowblue.png" />
     <None Include="wwwroot\stickers\yellowgreen.png" />
     <None Include="wwwroot\stickers\yelloworange.png" />
     <None Include="wwwroot\stickers\yellowred.png" />
-=======
-    <None Include="wwwroot\stickers\Star Lacy Cohort 27 Military.png" />
-    <None Include="wwwroot\stickers\Star Lacy Cohort 27.png" />
->>>>>>> Stashed changes
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Database\" />
   </ItemGroup>
 
 
