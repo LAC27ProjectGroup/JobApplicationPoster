@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elias\\OneDrive\\MSSA\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj": {}
+    "C:\\Users\\emily\\Desktop\\CSC390 Developing ASP.NET Web Applications\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elias\\OneDrive\\MSSA\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj": {
+    "C:\\Users\\emily\\Desktop\\CSC390 Developing ASP.NET Web Applications\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elias\\OneDrive\\MSSA\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj",
+        "projectUniqueName": "C:\\Users\\emily\\Desktop\\CSC390 Developing ASP.NET Web Applications\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj",
         "projectName": "JobApplicationPoster",
-        "projectPath": "C:\\Users\\elias\\OneDrive\\MSSA\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj",
-        "packagesPath": "C:\\Users\\elias\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elias\\OneDrive\\MSSA\\JobApplicationPoster\\JobApplicationPoster\\obj\\",
+        "projectPath": "C:\\Users\\emily\\Desktop\\CSC390 Developing ASP.NET Web Applications\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj",
+        "packagesPath": "C:\\Users\\emily\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\emily\\Desktop\\CSC390 Developing ASP.NET Web Applications\\JobApplicationPoster\\JobApplicationPoster\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\elias\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\emily\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -42,17 +43,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[3.1.3, )"
-            },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.1, )"
-            },
-            "System.Data.SqlClient": {
-              "target": "Package",
-              "version": "[4.8.1, )"
             }
           },
           "imports": [

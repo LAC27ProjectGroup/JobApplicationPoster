@@ -134,11 +134,12 @@
                 </div>
             </div>
         </form>
-        <p><text>Please work...</text>@ViewBag.SelectedStudent</p>
+        <p><text></text>@ViewBag.SelectedStudent</p>
         <p>
             @for (int i = 0; i < 14; i++)
             {
                 @await Component.InvokeAsync("StudentSticker", i)
+                <br/>
             }
         </p>
         <p>
