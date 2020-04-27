@@ -1,155 +1,60 @@
-﻿@model JobApplicationPoster.Models.StudentNames
+﻿@model IEnumerable<JobApplicationPoster.Models.Student>
 
 @{
-    ViewData["Title"] = "Job Application Poster";
+    ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" href="~/css/Poster.css" />
+<h1 style="color: cadetblue; max-width: 900px; text-align: center;">MSSA LAC27 Digital Job Application Poster</h1>
+<div>
+    <table>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        h1 {
-            color: maroon;
-        }
-
-        h3 {
-            color: maroon;
-        }
-
-        body {
-            background-color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 18px;
-            letter-spacing: 0px;
-            word-spacing: 0px;
-            color: #000000;
-            font-weight: normal;
-            text-decoration: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
-        }
-
-        div.pushLeft {
-            position: relative;
-            left: -10%;
-        }
-
-        div.pushRight {
-            position: relative;
-            top: -615px;
-            left: 900px;
-        }
-
-        div.center {
-            margin: auto;
-            width: 80%;
-            padding: 10px;
-        }
-
-        div.left {
-            margin: auto auto auto -50px;
-            width: 80%;
-            padding: 0px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p></p>
-    </div>
-    <div class="pushLeft">
-        <link rel="stylesheet" type="text/css" href="~/css/poster.css" />
-
-        <h1>MSSA LAC27 Digital Job Application Poster</h1>
-        <table>
-            <tbody>
-                <tr>
-                    <td style="width: 35px;"></td>
-                    <td style="width: 200px;"></td>
-                    <td colspan="5">&nbsp;due: 3/13</td>
-                    <td id="single" colspan="5">&nbsp;due: 3/20</td>
-                    <td id="single" colspan="5">&nbsp;due: 3/27</td>
-                    <td id="single" colspan="5">&nbsp;due: 4/3</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td class="text-center"><b>Name</b></td>
-                    <td colspan="5">&nbsp;5 Applications</td>
-                    <td id="single" colspan="5">&nbsp;10 Applications</td>
-                    <td id="single" colspan="5">&nbsp;15 Applications</td>
-                    <td id="single" colspan="5">&nbsp;20 Applications</td>
-                </tr>
-                @{
-                    int count = 1; 
-                    foreach (var name in ViewBag.StudentNames)
-                    {
-                                <tr>
-                                    <td class="text-center">@(count++)</td>
-                                    <td>&nbsp; @name</td>
-                                    @{
-                                        List<string> stickers = new List<string>();
-                                        if (ViewBag.Stickers.ContainsKey(name))
-                                        {
-                                             stickers = ViewBag.Stickers[name];
-                                        }
-                                        for (int i = 0; i < 20; i++)
-                                        {
-
-                                            if (i<stickers.Count)
-                                            {
-                                                <td>
-                                                    <img src="@stickers[i]" alt="sample" height="40"/>
-                                                </td>
-                                            }
-                                            else
-                                            {
-                                                <td></td>
-                                            }
-                                        }
-                                    }
-                                </tr>
-                    }
-                }
-            </tbody>
-        </table>
-    </div>
-    <div class="pushRight">
-        <h3>Add Sticker</h3>
-        <form asp-action="SelectStudent">
-            <div class="form-horizontal">
-                <div class="form-group" role="form">
-                    <label class="col-md-2 control-label">Who Are You?</label>
-                    <div class="col-md-3">
-                        @*@Html.DropDownList("StudentNamesList", new SelectList(ViewBag.StudentNames), "Select a Student", new { @class = "form-control" })*@
-                        @Html.DropDownListFor(model => model.SelectedName, new SelectList(ViewBag.StudentNames), "Select a Student", new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                        <input id="Submit1" type="submit" value="That's me!" />
-                    </div>
-                </div>
-            </div>
-        </form>
-        <p><text></text>@ViewBag.SelectedStudent</p>
-        <p>
-            @for (int i = 0; i < 14; i++)
+        <tbody>
+            <tr>
+                <td style="width: 35px;"></td>
+                <td style="width: 200px;"></td>
+                <td colspan="5">due: 3/13</td>
+                <td id="single" colspan="5">due: 3/20</td>
+                <td id="single" colspan="5">due: 3/27</td>
+                <td id="single" colspan="5">due: 4/3</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="text-center"><b>Name</b></td>
+                <td colspan="5">5 Applications</td>
+                <td id="single" colspan="5">10 Applications</td>
+                <td id="single" colspan="5">15 Applications</td>
+                <td id="single" colspan="5">20 Applications</td>
+            </tr>
+            @foreach (var item in Model)
             {
-                @await Component.InvokeAsync("StudentSticker", i)
-                <br/>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AutoId)
+                    </td>
+                    <td style="padding-left: 5px">
+                        <a asp-action="Applications" asp-route-id="@item.AutoId" style="color:darkred">
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </a>
+                    </td>
+                    @for (int i = 1; i <= 20; i++)
+                    {
+                        if (i <= item.Total)
+                        {
+                            <td style="background-color: cadetblue"></td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+
+                    }
+                </tr>
             }
-        </p>
-        <p>
-            @Html.DisplayFor(model => model.SelectedName)
-            Hello
-            @ViewBag.SelectedStudent
-
-            @await Component.InvokeAsync("StudentSticker", ViewBag.StudentPosition)
-        </p>
-    </div>
-</body>
-</html>
-
+        </tbody>
+    </table>
+</div>
+<div>
+    <p>
+        <a asp-action="Create">Add New Student</a>
+    </p>
+</div>

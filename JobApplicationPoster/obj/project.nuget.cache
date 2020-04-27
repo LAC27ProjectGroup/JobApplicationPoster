@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "AqyMGWEdTptpSbRhKg+jx+Fsbaxlr/u27NA9iw0YL7o/7rp2IX40o50AgmLrUX9IoiLQ99fepfrpdmVArJ3Vlg==",
+  "dgSpecHash": "9qvS+1Hcyi6q/2qQxC772luaGceBni+l9/FiSPQvAgTgSYnski+aFV9TnzPD4f1J1pC60xRWjpjVgXbAp4OUYA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\emily\\Desktop\\CSC390 Developing ASP.NET Web Applications\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj",
+  "projectFilePath": "C:\\Users\\emily\\source\\repos\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\emily\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\emily\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",
