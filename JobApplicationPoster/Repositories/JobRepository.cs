@@ -87,9 +87,9 @@ namespace JobApplicationPoster.Repositories
         // Update total value in Student class
         public void UpdateTotalApplications(int id)
         {
-            int result = (int)(from appli in _context.ApplicationData                          
-                          where appli.StudentId == id
-                          select appli.Sticker).Sum();
+            int result = (int)(from app in _context.ApplicationData                          
+                          where app.StudentId == id
+                          select app).Count(); // Get count of applications
 
             var student = new Student { AutoId = id };
             student.StickerCount = result;

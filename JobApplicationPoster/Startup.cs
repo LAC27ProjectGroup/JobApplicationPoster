@@ -34,7 +34,6 @@ namespace JobApplicationPoster
 
             services.AddControllersWithViews();
             services.AddMvc();
-            //services.AddSingleton<IStudentProvider, StudentProvider>();
             //DatabaseConnection dc = new DatabaseConnection();
             //dc.Test();
         }

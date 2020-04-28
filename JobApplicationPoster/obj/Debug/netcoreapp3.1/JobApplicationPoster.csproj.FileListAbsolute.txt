@@ -431,7 +431,6 @@ C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\obj\Debug\
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.dll
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.pdb
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.genruntimeconfig.cache
-C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\config.json
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.SqlServer.dll

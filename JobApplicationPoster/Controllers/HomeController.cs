@@ -62,16 +62,16 @@ namespace JobApplicationPoster.Controllers
         }
 
         [HttpPost, ActionName("CreateApplication")]
-        public IActionResult CreateApplication(Application appli, int id)
+        public IActionResult CreateApplication(Application app, int id)
         {
-            appli.StudentId = id;
-            appli.Sticker = 1;
+            app.StudentId = id;
+            app.Sticker = "forhire.png";
 
             ViewBag.StuId = id;
             var selectedStudent = _repository.GetStudentById(id);
             ViewBag.StudentName = selectedStudent.FirstName;
 
-            _repository.AddApplication(appli);
+            _repository.AddApplication(app);
             _repository.UpdateTotalApplications(id);
 
             return View("Applications", _repository.GetApplications(id));

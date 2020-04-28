@@ -19,7 +19,7 @@ namespace JobApplicationPoster.Models
         public string JobTitle { get; set; }
 
         public string Location { get; set; }
-        public int? Sticker { get; set; }
+        public string Sticker { get; set; }
 
         public int? StudentId { get; set; }
         [ForeignKey("StudentIdentification")]

@@ -18,6 +18,34 @@ namespace JobApplicationPoster.Database
             Database.EnsureCreated();
         }
 
-        public DbSet<Application> JobData { get; set; }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Student>().HasData(
+                new Student
+                {
+                    AutoId = 1,
+                    FirstName = "Benjamin",
+                    StickerCount = 0
+                },
+                new Student
+                {
+                    AutoId = 2,
+                    FirstName = "Daveena",
+                    StickerCount = 0
+                }
+            );
+
+            modelBuilder.Entity<Application>().HasData(
+                new Application
+                {
+                    ApplicationId = 1,
+                    StudentId = 1,
+                    Company = "Amazon",
+                    JobTitle = "Software Engineer",
+                    Location = "Seattle",
+                    Sticker = "forhire.png"
+                }
+            );
+        }
     }
 }
