@@ -6,8 +6,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using System.IO;
-using Microsoft.AspNetCore;
 
 namespace JobApplicationPoster
 {
@@ -16,15 +14,6 @@ namespace JobApplicationPoster
         public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
-        }
-
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args)
-        {
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("config.json");
-
-            IConfiguration configuration = builder.Build();
-
-            return WebHost.CreateDefaultBuilder(args).UseConfiguration(configuration).UseStartup<Startup>();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
