@@ -303,7 +303,6 @@ C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplication
 C:\Users\emily\Desktop\CSC390 Developing ASP.NET Web Applications\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\JobApplicationPoster.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
-C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\JobApplicationPoster.exe
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\JobApplicationPoster.deps.json
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\JobApplicationPoster.runtimeconfig.json
@@ -449,3 +448,4 @@ C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\obj\Debug\
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\Razor\Views\Home\CreateStudent.cshtml.g.cs
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
 C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\obj\Debug\netcoreapp3.1\Razor\Views\Home\EditApplication.cshtml.g.cs
+C:\Users\emily\source\repos\JobApplicationPoster\JobApplicationPoster\bin\Debug\netcoreapp3.1\config.json

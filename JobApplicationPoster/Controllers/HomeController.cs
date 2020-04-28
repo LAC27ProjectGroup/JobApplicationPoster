@@ -29,13 +29,13 @@ namespace JobApplicationPoster.Controllers
 
         // Add new Student
         [HttpGet]
-        public IActionResult Create()
+        public IActionResult CreateStudent()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult Create(Student student, Application appli)
+        public IActionResult CreateStudent(Student student, Application appli)
         {
             if (!ModelState.IsValid)
                 return View();
@@ -47,7 +47,7 @@ namespace JobApplicationPoster.Controllers
         }
 
         // Display Applications
-        public IActionResult Applications(int id)
+        public IActionResult Details(int id)
         {
             ViewBag.StuId = id;
             ViewBag.StudentName = _repository.GetStudentById(id).FirstName;
@@ -90,7 +90,7 @@ namespace JobApplicationPoster.Controllers
 
         // Edit Application
         [HttpGet]
-        public IActionResult Edit(int id)
+        public IActionResult EditApplication(int id)
         {
             var application = _repository.GetApplicationById(id);
             if (application == null)
