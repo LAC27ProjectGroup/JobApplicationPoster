@@ -6990,11 +6990,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\emily\\Desktop\\CSC390 Developing ASP.NET Web Applications\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj",
+      "projectUniqueName": "C:\\Users\\emily\\source\\repos\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj",
       "projectName": "JobApplicationPoster",
-      "projectPath": "C:\\Users\\emily\\Desktop\\CSC390 Developing ASP.NET Web Applications\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj",
+      "projectPath": "C:\\Users\\emily\\source\\repos\\JobApplicationPoster\\JobApplicationPoster\\JobApplicationPoster.csproj",
       "packagesPath": "C:\\Users\\emily\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\emily\\Desktop\\CSC390 Developing ASP.NET Web Applications\\JobApplicationPoster\\JobApplicationPoster\\obj\\",
+      "outputPath": "C:\\Users\\emily\\source\\repos\\JobApplicationPoster\\JobApplicationPoster\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",

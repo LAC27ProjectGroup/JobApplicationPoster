@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -7,13 +8,20 @@ namespace JobApplicationPoster.Models
 {
     public class Student
     {
-        public string FirstName { get; set; }
-        public int StickerCount { get; set; }
+        [Key]
+        public int AutoId { get; set; }
 
-        public Student(string firstName)
-        {
-            FirstName = firstName;
-            StickerCount = 0;
-        }
+        [Display(Name = "Name")]
+        [Required]
+        public string FirstName { get; set; }
+
+        public int? StickerCount { get; set; }
+        public virtual List<Application> ApplicationObj { get; set; }
+
+        //public Student(string firstName)
+        //{
+        //    FirstName = firstName;
+        //    StickerCount = 0;
+        //}
     }
 }

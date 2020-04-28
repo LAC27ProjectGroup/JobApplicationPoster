@@ -60,14 +60,14 @@
         <h1 class="display-4">Welcome</h1>
         <p></p>
     </div>
-    <div class="pushLeft">
+    <div>
         <link rel="stylesheet" type="text/css" href="~/css/poster.css" />
 
         <h1>MSSA LAC27 Digital Job Application Poster</h1>
         <table>
             <tbody>
                 <tr>
-                    <td style="width: 35px;"></td>
+                    <td style="width: 40px;"></td>
                     <td style="width: 200px;"></td>
                     <td colspan="5">&nbsp;due: 3/13</td>
                     <td id="single" colspan="5">&nbsp;due: 3/20</td>
@@ -83,72 +83,38 @@
                     <td id="single" colspan="5">&nbsp;20 Applications</td>
                 </tr>
                 @{
-                    int count = 1; 
+                    int count = 1;
                     foreach (var name in ViewBag.StudentNames)
                     {
-                                <tr>
-                                    <td class="text-center">@(count++)</td>
-                                    <td>&nbsp; @name</td>
-                                    @{
-                                        List<string> stickers = new List<string>();
-                                        if (ViewBag.Stickers.ContainsKey(name))
-                                        {
-                                             stickers = ViewBag.Stickers[name];
-                                        }
-                                        for (int i = 0; i < 20; i++)
-                                        {
+                        <tr>
+                            <td class="text-center">@(count++)</td>
+                            <td>&nbsp; @name</td>
+                            @{
+                                List<string> stickers = new List<string>();
+                                if (ViewBag.Stickers.ContainsKey(name))
+                                {
+                                    stickers = ViewBag.Stickers[name];
+                                }
+                                for (int i = 0; i < 20; i++)
+                                {
 
-                                            if (i<stickers.Count)
-                                            {
-                                                <td>
-                                                    <img src="@stickers[i]" alt="sample" height="40"/>
-                                                </td>
-                                            }
-                                            else
-                                            {
-                                                <td></td>
-                                            }
-                                        }
+                                    if (i < stickers.Count)
+                                    {
+                                        <td>
+                                            <img src="@stickers[i]" alt="sample" height="40" />
+                                        </td>
                                     }
-                                </tr>
+                                    else
+                                    {
+                                        <td></td>
+                                    }
+                                }
+                            }
+                        </tr>
                     }
                 }
             </tbody>
         </table>
-    </div>
-    <div class="pushRight">
-        <h3>Add Sticker</h3>
-        <form asp-action="SelectStudent">
-            <div class="form-horizontal">
-                <div class="form-group" role="form">
-                    <label class="col-md-2 control-label">Who Are You?</label>
-                    <div class="col-md-3">
-                        @*@Html.DropDownList("StudentNamesList", new SelectList(ViewBag.StudentNames), "Select a Student", new { @class = "form-control" })*@
-                        @Html.DropDownListFor(model => model.SelectedName, new SelectList(ViewBag.StudentNames), "Select a Student", new { @class = "form-control" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                        <input id="Submit1" type="submit" value="That's me!" />
-                    </div>
-                </div>
-            </div>
-        </form>
-        <p><text></text>@ViewBag.SelectedStudent</p>
-        <p>
-            @for (int i = 0; i < 14; i++)
-            {
-                @await Component.InvokeAsync("StudentSticker", i)
-                <br/>
-            }
-        </p>
-        <p>
-            @Html.DisplayFor(model => model.SelectedName)
-            Hello
-            @ViewBag.SelectedStudent
-
-            @await Component.InvokeAsync("StudentSticker", ViewBag.StudentPosition)
-        </p>
     </div>
 </body>
 </html>

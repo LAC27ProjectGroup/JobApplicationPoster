@@ -33,11 +33,11 @@ namespace JobApplicationPoster.Controllers
             };
 
             //TEST: Elias
-            /*Dictionary<string, List<string>> stickers = new Dictionary<string, List<string>>();
+            Dictionary<string, List<string>> stickers = new Dictionary<string, List<string>>();
             stickers.Add("Elias", new List<string> { "stickers/red.png", "stickers/orange.png" });
             stickers.Add("Emily", new List<string> { "stickers/green.png", "stickers/purple.png" });
             stickers.Add("Thomas", new List<string> { "stickers/blue.png", "stickers/black.png" });
-            ViewBag.Stickers = stickers;*/
+            ViewBag.Stickers = stickers;
 
             ViewBag.StudentNames = sn.studentNames;
             ViewBag.Students = _studentProvider.StudentList;

@@ -9,11 +9,16 @@ namespace JobApplicationPoster.Database
 {
     public class JobContext: DbContext
     {
+        public DbSet<Student> StudentData { get; set; }
+        public DbSet<Application> ApplicationData { get; set; }
+
         public JobContext(DbContextOptions<JobContext> options) : base(options)
         {
+            //Database.EnsureDeleted();
+            Database.EnsureCreated();
         }
 
-        public DbSet<Job> JobData { get; set; }
+        public DbSet<Application> JobData { get; set; }
 
         /*protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
