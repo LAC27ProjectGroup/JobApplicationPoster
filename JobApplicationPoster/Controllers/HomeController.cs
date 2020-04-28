@@ -5,64 +5,118 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using JobApplicationPoster.Models;
 using Microsoft.AspNetCore.Http;
+using JobApplicationPoster.Models;
+using JobApplicationPoster.Repositories;
 
 namespace JobApplicationPoster.Controllers
 {
     public class HomeController : Controller
     {
-        //private readonly ILogger<HomeController> _logger;
-        private readonly IStudentProvider _studentProvider;
+        private readonly ILogger<HomeController> _logger;
+        private IJobRepository _repository;
 
-        //public HomeController(ILogger<HomeController> logger)
-        //{
-        //    _logger = logger;
-        //}
-
-        public HomeController(IStudentProvider studentProvider)
+        public HomeController(IJobRepository repository, ILogger<HomeController> logger)
         {
-            _studentProvider = studentProvider;
+            _repository = repository;
+            _logger = logger;
         }
 
         public IActionResult Index()
         {
-            StudentNames sn = new StudentNames
-            {
-                studentNames = new List<string>() { "Benjamin", "Daveena", "Demitrius", "Elias", "Emily", "Franck", "Hyoil", "Kiran", "Paul", "Raphael", "Raven", "Taylor", "Thomas", "Tyler" }
-            };
-
-            //TEST: Elias
-            Dictionary<string, List<string>> stickers = new Dictionary<string, List<string>>();
-            stickers.Add("Elias", new List<string> { "stickers/red.png", "stickers/orange.png" });
-            stickers.Add("Emily", new List<string> { "stickers/green.png", "stickers/purple.png" });
-            stickers.Add("Thomas", new List<string> { "stickers/blue.png", "stickers/black.png" });
-            ViewBag.Stickers = stickers;
-
-            ViewBag.StudentNames = sn.studentNames;
-            ViewBag.Students = _studentProvider.StudentList;
-            //ViewBag.SelectedStudent = sn.SelectedName;
-            //string selectedStudent = Request.Form["StudentNamesList"].ToString();
-            //ViewBag.SelectedStudent = selectedStudent;
-            return View(sn);
+            return View(_repository.GetStudents());
         }
 
-        // Trying to save the selected student from the dropdown
-        //[HttpPost]
-        //public IActionResult Index(StudentNames sn)
-        //{
-        //    ViewBag.Hello = "Hello World!";
-        //    string selectedStudent = Request.Form["StudentNamesList"].ToString();
-        //    ViewBag.SelectedStudent = selectedStudent;
-        //    return View(sn);
-        //}
-
-        public IActionResult SelectStudent(StudentNames sn)
+        // Add new Student
+        [HttpGet]
+        public IActionResult Create()
         {
-            ViewBag.SelectedStudent = sn.SelectedName;
-            var position = sn.studentNames.IndexOf(sn.SelectedName); // NullReferenceException...
-            ViewBag.StudentPosition = position;
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Student student, Application appli)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            _repository.AddStudent(student);
+            _repository.SaveChanges();
+
             return RedirectToAction("Index");
+        }
+
+        // Display Applications
+        public IActionResult Applications(int id)
+        {
+            ViewBag.StuId = id;
+            ViewBag.StudentName = _repository.GetStudentById(id).FirstName;
+            return View(_repository.GetApplications(id));
+        }
+
+        // Add new Application
+        [HttpGet]
+        public IActionResult CreateApplication()
+        {
+            return View();
+        }
+
+        [HttpPost, ActionName("CreateApplication")]
+        public IActionResult CreateApplication(Application appli, int id)
+        {
+            appli.StudentId = id;
+            appli.Sticker = 1;
+
+            ViewBag.StuId = id;
+            var selectedStudent = _repository.GetStudentById(id);
+            ViewBag.StudentName = selectedStudent.FirstName;
+
+            _repository.AddApplication(appli);
+            _repository.UpdateTotalApplications(id);
+
+            return View("Applications", _repository.GetApplications(id));
+        }
+
+        // Delete Application
+        [HttpPost, ActionName("DeleteApplication")]
+        public IActionResult DeleteApplication(int appId, int id)
+        {
+            _repository.DeleteApplication(appId);
+            _repository.UpdateTotalApplications(id);
+
+            //return RedirectToAction("Applications", _repository.GetApplications(id));
+            return RedirectToAction("Index");
+        }
+
+        // Edit Application
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var application = _repository.GetApplicationById(id);
+            if (application == null)
+            {
+                return NotFound();
+            }
+
+            return View();
+        }
+
+        [HttpPost, ActionName("Edit")]
+        public async Task<IActionResult> EditReturn(int id)
+        {
+            var application = _repository.GetApplicationById(id);
+            bool isUpdated = await TryUpdateModelAsync<Application>(
+                application, "",
+                c => c.Company,
+                c => c.JobTitle,
+                c => c.Location);
+            if (isUpdated == true)
+            {
+                _repository.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View();
         }
 
         public IActionResult Privacy()

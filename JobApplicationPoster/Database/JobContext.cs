@@ -19,19 +19,5 @@ namespace JobApplicationPoster.Database
         }
 
         public DbSet<Application> JobData { get; set; }
-
-        /*protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Job>().HasData(
-               new Job
-               {
-                   JobID = 1,
-                   Name = "John Doe",
-                   CompanyName = "Microsoft",
-                   JobTitle = "SDE 1",
-                   Location = "Redmond, WA",
-                   Sticker = "Pink.png"
-               });
-        }*/
     }
 }

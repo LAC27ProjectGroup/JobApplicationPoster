@@ -7,7 +7,7 @@ using JobApplicationPoster.Models;
 
 namespace JobApplicationPoster.Repositories
 {
-    public interface IStudentRepository
+    public interface IJobRepository
     {
         IEnumerable<Student> GetStudents();
         IEnumerable<Application> GetApplications(int id);
@@ -17,7 +17,7 @@ namespace JobApplicationPoster.Repositories
         void AddApplication(Application application);      
         void DeleteStudent(int id);
         void DeleteApplication(int id);
-        void UpdateTotalApplication(int id);
+        void UpdateTotalApplications(int id);
         void SaveChanges();
         IQueryable<Student> PopulateStudentsDropDownList();
     }

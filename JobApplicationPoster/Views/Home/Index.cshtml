@@ -1,88 +1,57 @@
-﻿@model JobApplicationPoster.Models.StudentNames
+﻿@model IEnumerable<JobApplicationPoster.Models.Student>
 
 @{
     ViewData["Title"] = "Job Application Poster";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <style>
-        h1 {
-            color: maroon;
-        }
 
-        h3 {
-            color: maroon;
-        }
-
-        body {
-            background-color: white;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 18px;
-            letter-spacing: 0px;
-            word-spacing: 0px;
-            color: #000000;
-            font-weight: normal;
-            text-decoration: none;
-            font-style: normal;
-            font-variant: normal;
-            text-transform: none;
-        }
-
-        div.pushLeft {
-            position: relative;
-            left: -10%;
-        }
-
-        div.pushRight {
-            position: relative;
-            top: -615px;
-            left: 900px;
-        }
-
-        div.center {
-            margin: auto;
-            width: 80%;
-            padding: 10px;
-        }
-
-        div.left {
-            margin: auto auto auto -50px;
-            width: 80%;
-            padding: 0px;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p></p>
-    </div>
-    <div>
-        <link rel="stylesheet" type="text/css" href="~/css/poster.css" />
-
-        <h1>MSSA LAC27 Digital Job Application Poster</h1>
-        <table>
-            <tbody>
+<link rel="stylesheet" type="text/css" href="~/css/poster.css" />
+<h1 style="color: cadetblue; max-width: 900px; text-align: center;">MSSA LAC27 Digital Job Application Poster</h1>
+<div>
+    <table>
+        <tbody>
+            <tr>
+                <td style="width: 40px;"></td>
+                <td style="width: 200px;"></td>
+                <td colspan="5">&nbsp;due: 3/13</td>
+                <td id="single" colspan="5">&nbsp;due: 3/20</td>
+                <td id="single" colspan="5">&nbsp;due: 3/27</td>
+                <td id="single" colspan="5">&nbsp;due: 4/3</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td class="text-center"><b>Name</b></td>
+                <td colspan="5">&nbsp;5 Applications</td>
+                <td id="single" colspan="5">&nbsp;10 Applications</td>
+                <td id="single" colspan="5">&nbsp;15 Applications</td>
+                <td id="single" colspan="5">&nbsp;20 Applications</td>
+            </tr>
+            @foreach (var item in Model)
+            {
                 <tr>
-                    <td style="width: 40px;"></td>
-                    <td style="width: 200px;"></td>
-                    <td colspan="5">&nbsp;due: 3/13</td>
-                    <td id="single" colspan="5">&nbsp;due: 3/20</td>
-                    <td id="single" colspan="5">&nbsp;due: 3/27</td>
-                    <td id="single" colspan="5">&nbsp;due: 4/3</td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AutoId)
+                    </td>
+                    <td style="padding-left: 5px">
+                        <a asp-action="Details" asp-route-id="@item.AutoId" style="color:dodgerblue">
+                            @Html.DisplayFor(modelItem => item.FirstName)
+                        </a>
+                    </td>
+                    @for (int i = 1; i <= 20; i++)
+                    {
+                        if (i <= item.StickerCount)
+                        {
+                            <td style="background-color: cadetblue"></td>
+                        }
+                        else
+                        {
+                            <td></td>
+                        }
+
+                    }
                 </tr>
-                <tr>
-                    <td></td>
-                    <td class="text-center"><b>Name</b></td>
-                    <td colspan="5">&nbsp;5 Applications</td>
-                    <td id="single" colspan="5">&nbsp;10 Applications</td>
-                    <td id="single" colspan="5">&nbsp;15 Applications</td>
-                    <td id="single" colspan="5">&nbsp;20 Applications</td>
-                </tr>
-                @{
+            }
+            @*@{
                     int count = 1;
                     foreach (var name in ViewBag.StudentNames)
                     {
@@ -112,10 +81,12 @@
                             }
                         </tr>
                     }
-                }
-            </tbody>
-        </table>
-    </div>
-</body>
-</html>
-
+                }*@
+        </tbody>
+    </table>
+</div>
+<div>
+    <p>
+        <a asp-action="CreateStudent">Add New Student</a>
+    </p>
+</div>
