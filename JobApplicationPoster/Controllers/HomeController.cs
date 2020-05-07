@@ -101,8 +101,8 @@ namespace JobApplicationPoster.Controllers
             return View(application);
         }
 
-        [HttpPost, ActionName("Edit")]
-        public async Task<IActionResult> EditReturn(int id)
+        [HttpPost, ActionName("EditApplication")]
+        public async Task<IActionResult> EditReturn(int id, int studentId)
         {
             var application = _repository.GetApplicationById(id);
             bool isUpdated = await TryUpdateModelAsync<Application>(
@@ -113,7 +113,7 @@ namespace JobApplicationPoster.Controllers
             if (isUpdated == true)
             {
                 _repository.SaveChanges();
-                return RedirectToAction("Index");
+                return View("Details", _repository.GetApplications(studentId));
             }
 
             return View();
