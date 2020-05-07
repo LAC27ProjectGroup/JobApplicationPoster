@@ -22,7 +22,7 @@ namespace JobApplicationPoster.Models
         public string Sticker { get; set; }
 
         public int? StudentId { get; set; }
-        [ForeignKey("StudentIdentification")]
+        [ForeignKey("StudentId")]
 
         public virtual Student StudentObj { get; set; }
     }

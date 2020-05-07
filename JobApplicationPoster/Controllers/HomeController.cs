@@ -72,9 +72,9 @@ namespace JobApplicationPoster.Controllers
             ViewBag.StudentName = selectedStudent.FirstName;
 
             _repository.AddApplication(app);
-            _repository.UpdateTotalApplications(id);
+            //_repository.UpdateTotalApplications(id);
 
-            return View("Applications", _repository.GetApplications(id));
+            return View("Details", _repository.GetApplications(id));
         }
 
         // Delete Application
@@ -98,7 +98,7 @@ namespace JobApplicationPoster.Controllers
                 return NotFound();
             }
 
-            return View();
+            return View(application);
         }
 
         [HttpPost, ActionName("Edit")]

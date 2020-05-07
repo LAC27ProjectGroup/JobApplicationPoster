@@ -93,7 +93,7 @@ namespace JobApplicationPoster.Repositories
 
             var student = new Student { AutoId = id };
             student.StickerCount = result;
-            _context.Entry(student).Property("Total").IsModified = true;
+            _context.Entry(student).Property("StickerCount").IsModified = true;
             _context.SaveChanges();
         }
 

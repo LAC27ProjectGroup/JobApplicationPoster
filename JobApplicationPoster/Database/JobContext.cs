@@ -14,8 +14,6 @@ namespace JobApplicationPoster.Database
 
         public JobContext(DbContextOptions<JobContext> options) : base(options)
         {
-            //Database.EnsureDeleted();
-            Database.EnsureCreated();
         }
     }
 }
