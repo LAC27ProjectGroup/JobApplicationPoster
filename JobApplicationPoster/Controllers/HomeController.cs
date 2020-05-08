@@ -34,8 +34,8 @@ namespace JobApplicationPoster.Controllers
             return View();
         }
 
-        [HttpPost]
-        public IActionResult CreateStudent(Student student, Application appli)
+        [HttpPost, ActionName("CreateStudent")]
+        public IActionResult CreateStudent(Student student)
         {
             if (!ModelState.IsValid)
                 return View();
@@ -67,12 +67,12 @@ namespace JobApplicationPoster.Controllers
             app.StudentId = id;
             app.Sticker = "forhire.png";
 
-            ViewBag.StuId = id;
-            var selectedStudent = _repository.GetStudentById(id);
-            ViewBag.StudentName = selectedStudent.FirstName;
+            //ViewBag.StuId = id;
+            //var selectedStudent = _repository.GetStudentById(id);
+            //ViewBag.StudentName = selectedStudent.FirstName;
 
             _repository.AddApplication(app);
-            //_repository.UpdateTotalApplications(id);
+            _repository.UpdateTotalApplications(id);
 
             return View("Details", _repository.GetApplications(id));
         }
