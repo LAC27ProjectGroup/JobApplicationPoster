@@ -17,5 +17,10 @@ namespace JobApplicationPoster.Models
 
         public int? StickerCount { get; set; }
         public virtual List<Application> ApplicationObj { get; set; }
+
+/*        public Student()
+        {
+            ApplicationObj = GetApplications()
+        }*/
     }
 }

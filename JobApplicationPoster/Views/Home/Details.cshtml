@@ -31,24 +31,27 @@
              {
                 @using (Html.BeginForm("DeleteApplication", "Home", new { appId = item.ApplicationId, id = item.StudentId }))
                  {
-                    <tr>
-                        <td>
-                            @{count++;}
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Company)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.JobTitle)
-                        </td>
-                        <td>
-                            @Html.DisplayFor(modelItem => item.Location)
-                        </td>
-                        <td>
-                            @Html.ActionLink("Edit", "EditApplication", new { id = item.ApplicationId }) |
-                            <input type="submit" value="Delete" onclick="return confirm('You are about to delete this application, Company: @item.Company')" />
-                        </td>
-                    </tr>
+            <tr>
+                <td>
+                    @{count++;}
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.JobTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Sticker)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditApplication", new { id = item.ApplicationId }) |
+                    <input type="submit" value="Delete" onclick="return confirm('You are about to delete this application, Company: @item.Company')" />
+                </td>
+            </tr>
                  }
              }
         </tbody>

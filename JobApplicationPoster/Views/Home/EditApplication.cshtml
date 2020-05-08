@@ -3,7 +3,50 @@
 @{
     ViewData["Title"] = "Edit Application";
 }
+    <style>
+        .dropbtn {
+            background-color: #3498DB;
+            color: white;
+            padding: 1px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
 
+            .dropbtn:hover, .dropbtn:focus {
+                background-color: #2980B9;
+            }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 40px;
+            overflow: auto;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+        .dropdown a:hover {
+            background-color: #ddd;
+        }
+
+        .show {
+            display: block;
+        }
+    </style>
 <h1>Edit</h1>
 
 <h4 style="color: cadetblue;">Application</h4>
@@ -29,6 +72,40 @@
                 <input asp-for="Location" class="form-control" />
                 <span asp-validation-for="Location" class="text-danger"></span>
             </div>
+            <div>
+                <div class="dropdown">
+                    <label asp-for="Sticker" class="control-label"></label>
+                    <img id="currentSticker" src="~/stickers/@Model.Sticker" alt="sample" height="40" width="40">
+                    <label onclick="myFunction()" class="dropbtn">Change Sticker</label>
+                    <div id="dropdown" class="dropdown-content">
+                        <a id="Black" onclick="SelectSticker('black.png')"><img src="~/stickers/black.png" alt="sample" height="40" width="40"></a>
+                        <a id="Blue" onclick="SelectSticker('blue.png')"><img src="~/stickers/blue.png" alt="sample" height="40" width="40"></a>
+                        <a id="BlueYellow" onclick="SelectSticker('blueyellow.png')"><img src="~/stickers/blueyellow.png" alt="sample" height="40" width="40"></a>
+                        <a id="Circle I Applied" onclick="SelectSticker('Circle I Applied.png')"><img src="~/stickers/Circle I Applied.png" alt="sample" height="40" width="40"></a>
+                        <a id="Circle Need a job" onclick="SelectSticker('Circle Need A Job.png')"><img src="~/stickers/Circle Need A Job.png" alt="sample" height="40" width="40"></a>
+                        <a id="ForHire" onclick="SelectSticker('forhire.png')"><img src="~/stickers/forhire.png" alt="sample" height="40" width="40"></a>
+                        <a id="Green" onclick="SelectSticker('green.png')"><img src="~/stickers/green.png" alt="sample" height="40" width="40"></a>
+                        <a id="GreenYello" onclick="SelectSticker('greenyellow.png')"><img src="~/stickers/greenyellow.png" alt="sample" height="40" width="40"></a>
+                        <a id="Iapplied" onclick="SelectSticker('iapplied.png')"><img src="~/stickers/iapplied.png" alt="sample" height="40" width="40"></a>
+                        <a id="itsemipro" onclick="SelectSticker('itsemipro.png')"><img src="~/stickers/itsemipro.png" alt="sample" height="40" width="40"></a>
+                        <a id="lac27" onclick="SelectSticker('lac27.png')"><img src="~/stickers/lac27.png" alt="sample" height="40" width="40"></a>
+                        <a id="needajob" onclick="SelectSticker('needajob.png')"><img src="~/stickers/needajob.png" alt="sample" height="40" width="40"></a>
+                        <a id="orange" onclick="SelectSticker('orange.png')"><img src="~/stickers/orange.png" alt="sample" height="40" width="40"></a>
+                        <a id="orangeyellow" onclick="SelectSticker('orangeyellow.png')"><img src="~/stickers/orangeyellow.png" alt="sample" height="40" width="40"></a>
+                        <a id="pink" onclick="SelectSticker('pink.png')"><img src="~/stickers/pink.png" alt="sample" height="40" width="40"></a>
+                        <a id="purple" onclick="SelectSticker('purple.png')"><img src="~/stickers/purple.png" alt="sample" height="40" width="40"></a>
+                        <a id="red" onclick="SelectSticker('red.png')"><img src="~/stickers/red.png" alt="sample" height="40" width="40"></a>
+                        <a id="redyellow" onclick="SelectSticker('redyellow.png')"><img src="~/stickers/redyellow.png" alt="sample" height="40" width="40"></a>
+                        <a id="yellow" onclick="SelectSticker('yellow.png')"><img src="~/stickers/yellow.png" alt="sample" height="40" width="40"></a>
+                        <a id="yellowblue" onclick="SelectSticker('yellowblue.png')"><img src="~/stickers/yellowblue.png" alt="sample" height="40" width="40"></a>
+                        <a id="yellowred" onclick="SelectSticker('yellowred.png')"><img src="~/stickers/yellowred.png" alt="sample" height="40" width="40"></a>
+                        <a id="yellowgreen" onclick="SelectSticker('yellowgreen.png')"><img src="~/stickers/yellowgreen.png" alt="sample" height="40" width="40"></a>
+                        <a id="yelloworange" onclick="SelectSticker('yelloworange.png')"><img src="~/stickers/yelloworange.png" alt="sample" height="40" width="40"></a>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" asp-for="Sticker" class="form-control" />
+            <span asp-validation-for="Sticker" class="text-danger"></span>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
@@ -40,3 +117,26 @@
     <a asp-action="Details" asp-route-id="@Model.StudentId">Back to List</a>
 </div>
 
+<script>
+    function myFunction() {
+        document.getElementById("dropdown").classList.toggle("show");
+    }
+
+    function SelectSticker(StickerName) {
+        document.getElementById("Sticker").value = StickerName;
+        document.getElementById("currentSticker").src = "/stickers/" + StickerName;
+    }
+
+    window.onclick = function (event) {
+        if (!event.target.matches('.dropbtn')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+    }
+</script>

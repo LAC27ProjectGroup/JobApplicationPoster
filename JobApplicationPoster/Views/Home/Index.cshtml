@@ -28,28 +28,34 @@
             </tr>
             @foreach (var item in Model)
             {
-                <tr>
-                    <td class="text-center">
-                        @Html.DisplayFor(modelItem => item.AutoId)
-                    </td>
-                    <td style="padding-left: 5px">
-                        <a asp-action="Details" asp-route-id="@item.AutoId" style="color:dodgerblue">
-                            @Html.DisplayFor(modelItem => item.FirstName)
-                        </a>
-                    </td>
-                    @for (int i = 1; i <= 20; i++)
-                    {
-                        if (i <= item.StickerCount)
-                        {
-                            <td style="background-color: cadetblue"></td>
-                        }
-                        else
-                        {
-                            <td></td>
-                        }
+        <tr>
+            <td class="text-center">
+                @Html.DisplayFor(modelItem => item.AutoId)
+            </td>
+            <td style="padding-left: 5px">
+                <a asp-action="Details" asp-route-id="@item.AutoId" style="color:dodgerblue">
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </a>
+            </td>
+            @for (int i = 1; i <= 20; i++)
+            {
+                if (i <= item.StickerCount)
+                {
+                    @*<td style="background-color: cadetblue"></td>*@
+                
+                    <td>
 
-                    }
-                </tr>
+                        @{ string sticker = (item.ApplicationObj)[i-1].Sticker;}
+                        <img src="~/stickers/@sticker" alt="sample" height="40" />
+                    </td>
+                }
+                else
+                {
+                    <td></td>
+                }
+
+            }
+        </tr>
             }
             @*@{
                     int count = 1;

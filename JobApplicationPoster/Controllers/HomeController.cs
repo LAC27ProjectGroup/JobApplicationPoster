@@ -24,7 +24,12 @@ namespace JobApplicationPoster.Controllers
 
         public IActionResult Index()
         {
-            return View(_repository.GetStudents());
+            var students = _repository.GetStudents();
+            foreach(var student in students)
+            {
+                student.ApplicationObj = (List<Application>)_repository.GetApplications(student.AutoId);
+            }
+            return View(students);
         }
 
         // Add new Student
@@ -67,7 +72,7 @@ namespace JobApplicationPoster.Controllers
         public IActionResult CreateApplication(Application app, int id)
         {
             app.StudentId = id;
-            app.Sticker = "forhire.png";
+            //app.Sticker = "forhire.png";
 
             //Caused not updating counts
             ViewBag.StuId = id;
@@ -110,7 +115,8 @@ namespace JobApplicationPoster.Controllers
                 application, "",
                 c => c.Company,
                 c => c.JobTitle,
-                c => c.Location);
+                c => c.Location,
+                c => c.Sticker);
             if (isUpdated == true)
             {
                 _repository.SaveChanges();
