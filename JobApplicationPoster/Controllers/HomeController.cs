@@ -67,7 +67,7 @@ namespace JobApplicationPoster.Controllers
             app.StudentId = id;
             app.Sticker = "forhire.png";
 
-            //ViewBag.StuId = id;
+            ViewBag.StuId = id;
             //var selectedStudent = _repository.GetStudentById(id);
             //ViewBag.StudentName = selectedStudent.FirstName;
 
