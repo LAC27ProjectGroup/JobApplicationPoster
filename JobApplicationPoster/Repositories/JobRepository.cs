@@ -38,7 +38,6 @@ namespace JobApplicationPoster.Repositories
                               Location = app.Location,
                               Sticker = app.Sticker
                           }).ToList();
-
             return result;
         }
 
